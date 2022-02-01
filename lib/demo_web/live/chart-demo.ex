@@ -13,7 +13,9 @@ defmodule DemoWeb.ChartDemoLive do
   def render(assigns) do
     ~H"""
 
-    <%= live_component @socket, LineChart, id: 1 %>
+    <%= live_component @socket, LineChart,
+                  id: 1,
+                  data: get_chart_data() %>
 
     """
   end
