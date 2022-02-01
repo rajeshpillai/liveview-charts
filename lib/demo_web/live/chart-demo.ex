@@ -18,8 +18,9 @@ defmodule DemoWeb.ChartDemoLive do
         <%= live_component @socket, SparkLine,
               id: 1,
               data: get_chart_data(),
-              subtitle: "In Progress" ,
-              title: "150"
+              subtitle: "In Progress",
+              title: "150",
+              fill_color: "green"
         %>
       </div>
 
@@ -28,7 +29,8 @@ defmodule DemoWeb.ChartDemoLive do
             id: 2,
             data: get_chart_data(),
             subtitle: "Awaiting",
-            title: "40"
+            title: "40",
+            fill_color: "orange"
            %>
       </div>
 
@@ -37,7 +39,8 @@ defmodule DemoWeb.ChartDemoLive do
             id: 3,
             data: get_chart_data(),
             subtitle: "On Hold",
-            title: "15"
+            title: "15",
+            fill_color: "red"
             %>
       </div>
 

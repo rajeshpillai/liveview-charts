@@ -18,8 +18,10 @@ Hooks.SparkLine = {
     const { labels, values } = JSON.parse(this.el.dataset.chartData)
     const title  = this.el.dataset.title
     const subtitle  = this.el.dataset.subtitle
+    const fill_color = this.el.dataset.fillColor;
 
-    this.chart = new SparkLine(this.el, labels, values, title, subtitle);
+
+    this.chart = new SparkLine(this.el, labels, values, title, subtitle, fill_color);
     this.chart.render();
   }
 }

@@ -2,12 +2,13 @@ function randomizeArray() {
   return [10, 150, 60, 100,350]
 }
 class SparkLine {
-  constructor(el, labels, values, title, subtitle) {
+  constructor(el, labels, values, title, subtitle, fill_color) {
     this.el = el;
     this.labels = labels;
     this.values = values;
     this.title = title;
     this.subtitle = subtitle;
+    this.fill_color = fill_color;
   }
   render() {
     var options = {
@@ -30,7 +31,7 @@ class SparkLine {
       yaxis: {
         min: 0
       },
-      // colors: ['#DCE6EC'],
+      colors: [this.fill_color],
 
       title: {
         text: this.title,

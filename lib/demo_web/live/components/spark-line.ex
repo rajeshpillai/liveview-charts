@@ -3,6 +3,7 @@ defmodule DemoWeb.SparkLine do
   use DemoWeb, :live_component
 
   def mount(socket) do
+    socket = assign(socket, :fill_color, "#DCE6EC")
     {:ok, socket}
   end
 
@@ -12,6 +13,7 @@ defmodule DemoWeb.SparkLine do
     <div id="spark-line" phx-hook="SparkLine"
       data-title= {@title}
       data-subtitle= {@subtitle}
+      data-fill-color = {@fill_color}
       data-chart-data={"#{Jason.encode!(@data)}"}>
     </div>
     """
