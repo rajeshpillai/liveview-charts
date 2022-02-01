@@ -4,9 +4,9 @@ let Hooks = {};
 
 Hooks.LineChart = {
   mounted() {
-    console.log("Linechart mounted...");
-    // const { labels, values } = JSON.parse(this.el.dataset.chartData)
-    this.chart = new LineChart(this.el);
+    console.log("Linechart mounted...", this.el.dataset.chartData);
+    const { labels, values } = JSON.parse(this.el.dataset.chartData)
+    this.chart = new LineChart(this.el, labels, values);
     this.chart.render();
   }
 }
