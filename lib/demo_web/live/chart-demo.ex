@@ -4,7 +4,7 @@ defmodule DemoWeb.ChartDemoLive do
 
   alias DemoWeb.LineChart
   alias DemoWeb.SparkLine
-
+  alias DemoWeb.LineColumnChart
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, :chart_data, get_chart_data())}
@@ -44,6 +44,16 @@ defmodule DemoWeb.ChartDemoLive do
             %>
       </div>
 
+    </div>
+
+    <div class="row mt-5">
+      <div class="card" style="width:60rem;">
+
+          <%= live_component @socket, LineColumnChart,
+                id: 4,
+                data: get_chart_data() %>
+
+      </div>
     </div>
 
     <div class="row mt-5">
