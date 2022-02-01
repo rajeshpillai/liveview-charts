@@ -1,17 +1,20 @@
-defmodule DemoWeb.LineChartLive do
+defmodule DemoWeb.ChartDemoLive do
   # In Phoenix v1.6+ apps, the line below should be: use MyAppWeb, :live_view
   use DemoWeb, :live_view
+
+  alias DemoWeb.LineChart
+
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, :chart_data, get_chart_data())}
   end
 
+  @spec render(any) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
     ~H"""
-    <div id="chart" phx-hook="LineChart"
-      data-chart-data={"#{Jason.encode!(@chart_data)}"}>
 
-    </div>
+    <%= live_component @socket, LineChart, id: 1 %>
+
     """
   end
 

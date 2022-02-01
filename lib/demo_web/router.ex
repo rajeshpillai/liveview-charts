@@ -19,7 +19,7 @@ defmodule DemoWeb.Router do
 
     get "/", PageController, :index
 
-    live "/linechart", LineChartLive
+    live "/chartdemo", ChartDemoLive
   end
 
   # Other scopes may use custom stacks.
