@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-2">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Monitorin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Skill Based</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Queue Based</a>
+        </li>
+      </ul>
+  
+  </div>
+  
+  <div class ="col-10">
+    <div class="row">
+      <div class="col" style="width:15rem;">
+        <%= live_component @socket, SparkLine,
+              id: 1,
+              data: get_chart_data(),
+              subtitle: "In Progress",
+              title: "150",
+              fill_color: "green"
+        %>
+      </div>
+
+      <div class="col" style="width:15rem;">
+      <%= live_component @socket, SparkLine,
+            id: 2,
+            data: get_chart_data(),
+            subtitle: "Awaiting",
+            title: "40",
+            fill_color: "orange"
+            %>
+      </div>
+
+      <div class="col" style="width:15rem;">
+        <%= live_component @socket, SparkLine,
+            id: 3,
+            data: get_chart_data(),
+            subtitle: "On Hold",
+            title: "15",
+            fill_color: "red"
+            %>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col" style="width:60rem;">
+
+          <%= live_component @socket, LineColumnChart,
+                id: 4,
+                data: get_chart_data() %>
+
+      </div>
+      <div class="col" style="width:60rem;">
+
+        <%= live_component @socket, LineChart,
+              id: 4,
+              data: get_chart_data() %>
+
+    </div>
+  </div>
+
+  </div>
+
+  
+
+  
+</div>
