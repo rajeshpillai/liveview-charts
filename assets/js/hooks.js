@@ -1,5 +1,6 @@
 import LineChart from "./chart-types/line-chart"
 import LineColumnChart from "./chart-types/line-column-chart";
+import PieChart from "./chart-types/pie-chart";
 import SparkLine from "./chart-types/spark-line";
 
 let Hooks = {};
@@ -38,6 +39,19 @@ Hooks.LineColumnChart = {
 
 
     this.chart = new LineColumnChart(this.el, labels, values, title, subtitle, fill_color);
+    this.chart.render();
+  }
+}
+
+
+Hooks.PieChart = {
+  mounted() {
+    console.log("PieChart mounted...", this.el.dataset.labels);
+    const labels  = JSON.parse(this.el.dataset.labels)
+    const series = JSON.parse(this.el.dataset.series)
+
+    console.log("HP: ", labels, series);
+    this.chart = new PieChart(this.el, labels, series);
     this.chart.render();
   }
 }

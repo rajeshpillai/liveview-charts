@@ -50,20 +50,29 @@
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col" style="width:60rem;">
+      <div class="col"">
 
           <%= live_component @socket, LineColumnChart,
                 id: 4,
                 data: get_chart_data() %>
 
       </div>
-      <div class="col" style="width:60rem;">
+      <div class="col">
 
         <%= live_component @socket, LineChart,
               id: 4,
               data: get_chart_data() %>
-
-     </div>
+      </div>
     </div>
-  </div>
+    <div class="row mt-5">
+      <div class="col"">
+
+          <%= live_component @socket, PieChart,
+                id: 5,
+                labels: ["Company A", "Company B","Company B"],
+                series: [44, 55, 13]
+          %>
+      </div>
+    </div>
+   </div>
 </div>

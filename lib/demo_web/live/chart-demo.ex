@@ -5,6 +5,8 @@ defmodule DemoWeb.ChartDemoLive do
   alias DemoWeb.LineChart
   alias DemoWeb.SparkLine
   alias DemoWeb.LineColumnChart
+  alias DemoWeb.PieChart
+
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, :chart_data, get_chart_data())}
