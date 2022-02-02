@@ -1,6 +1,6 @@
-import LineChart from "./line-chart"
-import LineColumnChart from "./line-column-chart";
-import SparkLine from "./spark-line";
+import LineChart from "./chart-types/line-chart"
+import LineColumnChart from "./chart-types/line-column-chart";
+import SparkLine from "./chart-types/spark-line";
 
 let Hooks = {};
 
