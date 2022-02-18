@@ -24,8 +24,8 @@ defmodule DemoWeb.ChartDemoLive do
 
   defp get_chart_data do
     chart_data = %{
-      labels: ["10-Jan-2022","11-Jan-2022","12-Jan-2022","13-Jan-2022","14-Jan-2022","15-Jan-2022","16-Jan-2022"],
-      values: [50,30,45,33,35,89]
+      labels: ["Jan","Feb","Mar","Apr","May"],
+      values: [50,30,45,50,90]
     }
     chart_data
   end
