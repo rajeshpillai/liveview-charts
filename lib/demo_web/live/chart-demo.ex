@@ -9,7 +9,16 @@ defmodule DemoWeb.ChartDemoLive do
 
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :chart_data, get_chart_data())}
+    {:ok, assign(socket, chart_data: get_chart_data(), filter_month: "jan")}
+  end
+
+  def handle_event("filter-month",  %{"month" => month}, socket) do
+    IO.inspect(month)
+    socket =
+      assign(socket,
+       chart_data: get_chart_data()
+      )
+    {:noreply, socket}
   end
 
 

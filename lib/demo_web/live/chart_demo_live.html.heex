@@ -1,4 +1,9 @@
 <div class="row">
+  <form phx-submit="filter-month">
+      <input type="text" name="month" value={@filter_month}"  placeholder="enter month"/>
+      <button>Filter</button>
+  </form>  
+
   <div class="col-2">
       <ul class="nav flex-column">
         <li class="nav-item">
