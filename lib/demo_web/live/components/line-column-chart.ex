@@ -9,7 +9,7 @@ defmodule DemoWeb.LineColumnChart do
   @spec render(any) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
     ~H"""
-    <div id="chart" phx-hook="LineColumnChart"
+    <div id="chart" phx-hook="LineColumnChart" class="item-content"
       data-chart-data={"#{Jason.encode!(@data)}"}>
     </div>
     """

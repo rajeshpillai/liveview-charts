@@ -9,7 +9,7 @@ defmodule DemoWeb.PieChart do
   @spec render(any) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
     ~H"""
-    <div phx-hook="PieChart"
+    <div phx-hook="PieChart" class="item-content"
       data-labels={"#{Jason.encode!(@labels)}"}
       data-series={"#{Jason.encode!(@series)}"}
     />

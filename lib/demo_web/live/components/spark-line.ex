@@ -11,6 +11,7 @@ defmodule DemoWeb.SparkLine do
   def render(assigns) do
     ~H"""
     <div id="spark-line" phx-hook="SparkLine"
+      class="item-content"
       data-title= {@title}
       data-subtitle= {@subtitle}
       data-fill-color = {@fill_color}

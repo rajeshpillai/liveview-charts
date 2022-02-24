@@ -22,9 +22,8 @@
   
   </div>
   
-  <div class ="col-10">
-    <div class="row">
-      <div class="col" style="width:15rem;">
+  <div id="chart-container" class ="grid col-10" phx-hook="MuuriHook">
+      <div class="item" style="width:30rem;height:30rem;">
         <%= live_component @socket, SparkLine,
               id: 1,
               data: get_chart_data(),
@@ -34,7 +33,7 @@
         %>
       </div>
 
-      <div class="col" style="width:15rem;">
+      <div class="item" style="width:30rem;height:30rem;">
       <%= live_component @socket, SparkLine,
             id: 2,
             data: get_chart_data(),
@@ -44,7 +43,7 @@
             %>
       </div>
 
-      <div class="col" style="width:15rem;">
+      <div class="item" style="width:30rem;height:30rem;">
         <%= live_component @socket, SparkLine,
             id: 3,
             data: get_chart_data(),
@@ -53,24 +52,18 @@
             fill_color: "#DEA4C0"
             %>
       </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col"">
-
+      <div class="item" style="width:30rem;height:60rem;">
           <%= live_component @socket, LineColumnChart,
                 id: 4,
                 data: get_chart_data() %>
 
       </div>
-      <div class="col">
-
+      <div class="item" style="width:40rem;height:60rem;">
         <%= live_component @socket, LineChart,
               id: 4,
               data: get_chart_data() %>
       </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col"">
+          <div class="item" style="width:30rem;height:30rem;">
 
           <%= live_component @socket, PieChart,
                 id: 5,
@@ -78,6 +71,5 @@
                 series: [44, 55, 13]
           %>
       </div>
-    </div>
    </div>
 </div>
